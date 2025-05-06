@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+SELECT (
+    -- Subconsulta que selecciona el segundo salario más alto distinto
+    SELECT DISTINCT salary
+    FROM Employee              -- De la tabla Employee
+    ORDER BY salary DESC       -- Ordena los salarios de mayor a menor
+    LIMIT 1 OFFSET 1           -- Salta el primero (más alto) y toma el segundo
+) AS SecondHighestSalary;     -- Asigna un alias al resultado para que se muestre con ese nombre
