@@ -1,0 +1,8 @@
+SELECT
+    p.firstName,       -- Selecciona el primer nombre de la persona
+    p.lastName,        -- Selecciona el apellido de la persona
+    a.city,            -- Selecciona la ciudad de la dirección (puede ser NULL)
+    a.state            -- Selecciona el estado de la dirección (puede ser NULL)
+FROM Person p          -- Tabla principal: Person, con alias 'p'
+LEFT JOIN Address a    -- Se hace un LEFT JOIN con la tabla Address, alias 'a'
+ON p.personId = a.personId;  -- Condición de unión: las filas se relacionan si el personId coincide
